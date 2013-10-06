@@ -1,0 +1,8 @@
+<h1>Steam Collage Generator</h1>
+
+<%= form_tag(controller: "steamcollage", action: "generate", method: "post") do %>
+  <%= label_tag :steamid %><br />
+  <%= text_field_tag :steamid %>
+  <%= submit_tag("Generate Image") %>
+<% end %>
+
