@@ -34,10 +34,10 @@ class SteamcollageController < ApplicationController
     gamehash.each do |game|
       if opts[:download]
         if File.exists?("images/#{File.basename(game["logo"])}")
-          puts " -- [S] #{game["name"]} - #{File.basename(game["logo"])} exists, skipping."
+          # puts " -- [S] #{game["name"]} - #{File.basename(game["logo"])} exists, skipping."
           images_cached = images_cached + 1
         else
-          puts " -- [D] #{game["name"]} - #{File.basename(game["logo"])}"
+          #puts " -- [D] #{game["name"]} - #{File.basename(game["logo"])}"
           if opts[:download]
 
             File.open("images/#{File.basename(game["logo"])}", "wb") do |f| 
@@ -47,7 +47,7 @@ class SteamcollageController < ApplicationController
           end
         end
       else
-        puts "-- [S] #{game["name"]} - #{File.basename(game["logo"])} --no-download"
+        # puts "-- [S] #{game["name"]} - #{File.basename(game["logo"])} --no-download"
         images_skipped = images_skipped + 1
       end
       if opts[:download]
