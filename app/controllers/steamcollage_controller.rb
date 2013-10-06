@@ -66,7 +66,7 @@ class SteamcollageController < ApplicationController
       self.geometry = '184x69+0+0'
     }
 
-    coimage.write("public/images/#{params[:steamid]}.jpg")
-
+    coimage.write("assets/#{params[:steamid]}.jpg")
+    send_file "assets/#{params[:steamid]}.jpg", :type => 'image/jpeg', :disposition => 'inline'
   end
 end
